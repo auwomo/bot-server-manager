@@ -1,0 +1,17 @@
+[project]
+name = "gpu-metrics"
+version = "0.1.0"
+description = "CLI tool for querying GPU cluster metrics from VictoriaMetrics"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "requests>=2.28",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+gpu-metrics = "gpu_metrics.__main__:cli"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"

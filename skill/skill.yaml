@@ -1,0 +1,37 @@
+name: gpu-metrics
+description: |
+  Query GPU cluster metrics from VictoriaMetrics.
+  Provides information about GPU utilization, allocation, idle cards, and training jobs.
+
+commands:
+  - name: summary
+    description: Get overall GPU cluster summary (total GPUs, allocated, idle, utilization)
+    run: gpu-metrics summary --format json
+
+  - name: nodes
+    description: Show GPU allocation breakdown per node
+    run: gpu-metrics nodes --format json
+
+  - name: jobs
+    description: List currently running GPU training jobs
+    run: gpu-metrics jobs --format json
+
+  - name: idle
+    description: Show idle GPU details per node
+    run: gpu-metrics idle --format json
+
+  - name: health
+    description: Check VictoriaMetrics connection status
+    run: gpu-metrics health --format json
+
+  - name: explore
+    description: Discover available metrics (useful for debugging)
+    run: gpu-metrics explore
+
+  - name: query
+    description: Run a custom PromQL query
+    args:
+      - name: promql
+        description: The PromQL expression to execute
+        required: true
+    run: gpu-metrics query "{{promql}}" --format json
