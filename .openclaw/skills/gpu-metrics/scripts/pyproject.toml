@@ -14,6 +14,9 @@ dependencies = [
 gpu-metrics = "gpu_metrics.__main__:cli"
 school-collector = "school_collector.__main__:main"
 
+[tool.setuptools.packages.find]
+include = ["gpu_metrics*", "school_collector*"]
+
 [build-system]
 requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
