@@ -1,0 +1,20 @@
+ssh:
+  host: 172.16.78.35
+  port: 10024
+  username: mazijian
+  password_env: SCHOOL_SSH_PASSWORD
+
+vm:
+  url: http://localhost:8428
+  auth_user_env: VM_AUTH_USER
+  auth_pass_env: VM_AUTH_PASS
+
+scrape:
+  dcgm_interval: 30
+  slurm_interval: 60
+  max_parallel: 10
+  curl_timeout: 3
+
+labels:
+  cluster: school
+  job: school-dcgm-exporter
